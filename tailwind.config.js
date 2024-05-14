@@ -1,11 +1,17 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+    './src/**/*.{js,jsx,ts,tsx}',
+],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        palanquin: ['Palanquin', 'sans-serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
+        sedan :  ["Sedan SC", "serif"]
+      },
+    },
   },
   plugins: [],
 }
+
