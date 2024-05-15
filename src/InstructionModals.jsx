@@ -16,7 +16,7 @@ const InstructionsModal = ({ onClose }) => {
           <li>Use the defined prefix to trigger the snippet.</li>
           <li>Save the file.</li>
           <p className="mt-2 text-lg font-semibold">
-          Voila! You have just created a snippet. Happy coding 🫡
+          Voila! You have just created a snippet. Happy coding 🫡🫡
           </p>
         </ul>
         <button

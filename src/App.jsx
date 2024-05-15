@@ -105,7 +105,7 @@ ${bodyFormatted}
           </div>
          
         </div>
-        <div className="w-[85vw] lg:w-[30vw] h-[50vh] lg:h-[55vh] flex flex-col">
+        <div className="w-[85vw] lg:w-[30vw] h-[50vh] lg:h-[55vh] flex flex-col mb-32 lg:mb-0">
         <textarea
             className="focus:outline-none focus:ring focus:border-purple-700 w-full p-4 border border-gray-800 rounded-md bg-gray-900 text-gray-300 h-[55vh] overflow-auto"
             placeholder="Snippet will appear here..."
@@ -113,10 +113,10 @@ ${bodyFormatted}
             readOnly
           ></textarea>
           <ToastContainer />
-          <div className="w-full relative">
+          <div className="w-full lg:relative ">
           {snippet && (
             <button
-              className="mt-2 lg:mt-4 absolute right-0 py-2 px-1 lg:px-0 bg-gradient-to-r from-purple-600 to-pink-800 hover:scale-105 duration-125 ease-in-out text-white rounded-md  lg:w-[9vw]"
+              className="mt-2 lg:mt-4 absolute right-8 lg:right-0 py-2 px-1 lg:px-0 bg-gradient-to-r from-purple-600 to-pink-800 hover:scale-105 duration-125 ease-in-out text-white rounded-md  lg:w-[9vw]"
               onClick={copySnippet}
             >
               Copy Snippet
@@ -125,7 +125,7 @@ ${bodyFormatted}
           </div>
         </div>
       </div>
-      <footer className="w-full font-montserrat text-md absolute bottom-3" >
+      <footer className="w-full font-montserrat text-md absolute bottom-1 lg:bottom-3" >
         <p className="text-center">Made with 💖by <span className="bg-gradient-to-l from-[#ff49db] to-purple-500 bg-clip-text text-transparent font-semibold">Rico</span></p>
       </footer>
     </div>
