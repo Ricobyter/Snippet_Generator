@@ -55,15 +55,14 @@ ${bodyFormatted}
   };
 
   return (
-    <div className="bg-black text-white min-h-screen">
+    <div className="bg-black text-white min-h-screen relative">
       <div>
       <h1 className="pt-8 mb-6 text-4xl text-center underline font-sedan capitalize">Snippet Generator</h1>
       </div>
-      <div className="flex justify-around items-center h-full">
-        <div className="w-[30vw] h-[55vh] gap-2">
-          <div className="flex w-full justify-between">
+      <div className="flex justify-around items-center h-full mt-20 font-montserrat">
+        <div className="w-[30vw] h-[55vh] flex flex-col gap-4">
+          <div className="flex w-full justify-between ">
           <div >
-            <label className="block text-gray-500 text-sm font-bold mb-2">Description:</label>
             <input
               className="p-2 border border-gray-800 rounded-md bg-gray-900 text-gray-300"
               type="text"
@@ -73,43 +72,48 @@ ${bodyFormatted}
             />
           </div>
           <div>
-            <label className="block text-gray-500 text-sm font-bold mb-2">Prefix:</label>
             <input
               className="w-full p-2 border border-gray-800 rounded-md bg-gray-900 text-gray-300"
               type="text"
               value={prefix}
               onChange={(e) => setPrefix(e.target.value)}
+              placeholder="Prefix..."
             />
           </div>
           </div>
           <div className="h-full">
-            <label className="block text-gray-500 text-sm font-bold mb-2">Body Element:</label>
             <textarea
-              className="w-full p-2 border border-gray-800 rounded-md bg-gray-900 text-gray-300 h-full"
+              className="w-full p-2 border border-gray-800 rounded-md bg-gray-900 text-gray-300 h-full overflow-auto"
               value={bodyElement}
               onChange={(e) => setBodyElement(e.target.value)}
+              placeholder="Body..."
             ></textarea>
           </div>
          
         </div>
-        <div className="w-[35vw] h-[65vh] flex flex-col justify-center items-center">
+        <div className="w-[35vw] flex flex-col ">
         <textarea
-            className="outline-none w-full p-4 border border-gray-800 rounded-md bg-gray-900 text-gray-300 h-full"
+            className="focus:outline-none focus:ring focus:border-purple-500 w-full p-4 border border-gray-800 rounded-md bg-gray-900 text-gray-300 h-[55vh] overflow-auto"
             placeholder="Snippet will appear here..."
             value={snippet}
             readOnly
           ></textarea>
           <ToastContainer />
+          <div className="w-full relative">
           {snippet && (
             <button
-              className="mt-4 px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-800 hover:scale-105 duration-125 ease-in-out text-white rounded-md hover:bg-green-600"
+              className="mt-4 absolute right-0 py-2 bg-gradient-to-r from-purple-600 to-pink-800 hover:scale-105 duration-125 ease-in-out text-white rounded-md hover:bg-green-600 w-[9vw]"
               onClick={copySnippet}
             >
               Copy Snippet
             </button>
           )}
+          </div>
         </div>
       </div>
+      <footer className="w-full font-montserrat text-md absolute bottom-3" >
+        <p className="text-center">Made with 💖by <span className="bg-gradient-to-l from-[#ff49db] to-purple-500 bg-clip-text text-transparent font-semibold">Rico</span></p>
+      </footer>
     </div>
   );
 };
