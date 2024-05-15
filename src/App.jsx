@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { FaExclamation } from "react-icons/fa6";
+import InstructionsModal from "./InstructionModals";
+
 
 const App = () => {
   const [description, setDescription] = useState("");
   const [prefix, setPrefix] = useState("");
   const [bodyElement, setBodyElement] = useState("");
   const [snippet, setSnippet] = useState("");
+  const [showInstructions, setShowInstructions] = useState(false);
 
   useEffect(() => {
     generateSnippet();
@@ -54,10 +58,16 @@ ${bodyFormatted}
     });
   };
 
+  const toggleInstructions = () => {
+    setShowInstructions(!showInstructions);
+  };
+
   return (
     <div className="bg-black text-white min-h-screen relative">
       <div>
-      <h1 className="pt-8 mb-6 text-4xl text-center underline font-sedan capitalize">Snippet Generator</h1>
+      <h1 className="pt-8 mb-6 text-4xl text-center underline underline-offset-4 font-sedan capitalize">Snippet Generator</h1>
+      <span className="ml-2 cursor-pointer" onClick={toggleInstructions}><FaExclamation /></span>
+       {showInstructions && <InstructionsModal onClose={toggleInstructions} />}
       </div>
       <div className="flex justify-around items-center h-full mt-20 font-montserrat">
         <div className="w-[30vw] h-[55vh] flex flex-col gap-4">
